@@ -1,8 +1,46 @@
+import 'package:note_app/models/note_mode.dart';
 import 'package:note_app/services/data_service.dart';
+import 'package:note_app/services/file_service.dart';
 import 'package:note_app/services/io_service.dart';
 import 'dart:io';
 
 void main() async {
+  FileService fileService = FileService();
+  await fileService.init();
+
+  String title = "";
+  String content = "";
+  String exit = "";
+
+  write("Iltimos note ni nomini kiriting: ");
+  title = read();
+
+  // await fileService.updateFile(title);
+
+  Note note = await fileService.readFile(title);
+  print(note);
+
+  await fileService.deleteFile(title);
+
+  // String path = await fileService.createFile(title);
+  // writeln("Note ni yozishingiz mumkin(Yozib tugatganingizda 'Save' so'zini yozsangiz note saqlab qo'yiladi)");
+  // while(exit != "Save") {
+  //   exit = read();
+  //   if(exit == "Save") {
+  //     break;
+  //   }
+  //   content += (exit + "\n");
+  // }
+  //
+  // Note note = Note(title: title, content: content);
+  //
+  // await fileService.writeFile(note, path).then((value) => print("Note muvofaqiyatli saqlandi"));
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+/*
+void main(){
   print("1. Ma'lumotlarni store qilish:\n2. Ma'lumotlarni o'qish:\n3. Ma'lumotlar delete qilish:\n0. Dasturdan chiqich: ");
   stdout.write("Son kiriting: ");
   int son = int.parse(stdin.readLineSync()!);
@@ -53,6 +91,22 @@ void main() async {
   }
   print("Dastur yakunlandi, foydalanganingiz uchun raxmat!");
 }
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
