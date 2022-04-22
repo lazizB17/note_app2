@@ -1,11 +1,11 @@
 import 'dart:convert';
 import 'dart:io';
-import '../models/note_mode.dart';
+import '../models/note_model.dart';
+import 'io_service.dart';
 
 class FileService {
   Directory directory = Directory(Directory.current.path + "\\assets\\files");
 
-  /// Initialization of the file json
   Future<void> init() async {
     bool isDirectoryCreated = await directory.exists();
     if(!isDirectoryCreated) {
@@ -13,7 +13,6 @@ class FileService {
     }
   }
 
-  ///This method to use for create file
   Future<String> createFile(String title) async {
     File file = File(directory.path + "\\$title.note");
     bool isFileCreated = await file.exists();
@@ -25,7 +24,6 @@ class FileService {
     return file.path;
   }
 
-  ///This method to use for write file
   Future<String> writeFile(Note note, String path) async {
     File file = File(path);
     //KRIPTOGRAFIC CODE => ENICODE
@@ -34,7 +32,6 @@ class FileService {
     return file.path;
   }
 
-  ///This method to use for read file
   Future<Note> readFile(String title) async {
     File file = File(directory.path + "\\$title.note");
     bool isFileCreated = await file.exists();
@@ -48,6 +45,28 @@ class FileService {
     return note;
   }
 
+  Future<String> updateFile(String title) async {
+    String path = directory.path + "\\$title.note";
+    Note note = await readFile(title);
+
+    writeln("O'zgartirmoqchi bo'lingan note:");
+    writeln(note);
+    writeln("Yanglinishni kiriting:");
+    String content = "";
+    String exit = "";
+    while(exit != "Save") {
+      exit = read();
+      if(exit == "Save") {
+        break;
+      }
+      content += (exit + "\n");
+    }
+    note.content = content;
+    note.time = DateTime.now().toString();
+
+    return await writeFile(note, path);
+  }
+
   ///This method to use for delete file
   Future<String> deleteFile(String title) async{
     File file = File(directory.path + "\\$title.note");
@@ -59,6 +78,7 @@ class FileService {
     }
     return 'Deleted';
   }
+
 }
 
 
