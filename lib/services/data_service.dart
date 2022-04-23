@@ -79,56 +79,7 @@ class DataService {
   }
 }
 ////////////////////////////////////////////////////////////////////////////////
-/*
-  // store int
-//   Future<bool> storeInt({required String key, required int value}) async {
-//     String source = await file.readAsString();
-//     Map<String, dynamic> database;
-//     if(source.isEmpty) {
-//       database = {};
-//     } else {
-//       database = jsonDecode(source);
-//     }
-//     bool result = false;
-//     database.addAll({key: value});
-//     source = jsonEncode(database);
-//     await file.writeAsString(source).whenComplete(() {result = true;}).catchError((_) {result = false;});
-//     return result;
-//   }
-//
-// // store bool
-//   Future<bool> storeBool({required String key, required bool value}) async {
-//     String source = await file.readAsString();
-//     Map<String, dynamic> database;
-//     if(source.isEmpty) {
-//       database = {};
-//     } else {
-//       database = jsonDecode(source);
-//     }
-//     bool result = false;
-//     database.addAll({key: value});
-//     source = jsonEncode(database);
-//     await file.writeAsString(source).whenComplete(() {result = true;}).catchError((_) {result = false;});
-//     return result;
-//   }
-//
-// // store double
-//   Future<bool> storeDouble({required String key, required double value}) async {
-//     String source = await file.readAsString();
-//     Map<String, dynamic> database;
-//     if(source.isEmpty) {
-//       database = {};
-//     } else {
-//       database = jsonDecode(source);
-//     }
-//     bool result = false;
-//     database.addAll({key: value});
-//     source = jsonEncode(database);
-//     await file.writeAsString(source).whenComplete(() {result = true;}).catchError((_) {result = false;});
-//     return result;
-//   }
 
- */
 
 
 

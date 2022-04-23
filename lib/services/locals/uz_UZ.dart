@@ -1,3 +1,4 @@
+
 const uzUZ = {
   'welcome' : 'Note Appga Xush Kelibsiz!',
   'create_note': 'Yangi noteni yarating.',
@@ -10,4 +11,7 @@ const uzUZ = {
   'write_note': "Notega yozishingiz mumkin. (Saqlash uchun 'save' so'zini yozing): ",
   'save': 'save',
   'note_save': "Note muvoffaqiyatli saqlandi!",
+  'number_note': "Note raqamini kiriting",
+  'delete_all': "Barcha notelarni o'chirish",
+  'delete_selected': "Tanlab o'chirish",
 };
