@@ -15,3 +15,5 @@ const uzUZ = {
   'delete_all': "Barcha notelarni o'chirish",
   'delete_selected': "Tanlab o'chirish",
 };
+
+
