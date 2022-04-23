@@ -18,5 +18,5 @@ void main() async {
   );
 }
 
-// My note app created by Abdulaziz
+/// My note app created by Abdulaziz
 
