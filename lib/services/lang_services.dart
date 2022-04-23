@@ -1,26 +1,37 @@
-import 'package:note_app/services/locals/uz_UZ.dart';
-import 'package:note_app/services/locals/en_EN.dart';
-import 'package:note_app/services/locals/ru_RU.dart';
+import 'data_service.dart';
 
 enum Language {en, ru, uz}
 
-class LangService{
-  // Field
+class LangService {
+  // field
   static Language _language = Language.en;
+  static final DataService _dataService = DataService();
 
-  // Setter
-  static set language(Language language){
-    _language = language;
+  static Future<Language> currentLanguage() async {
+    await _dataService.init();
+    var result = await _dataService.readData(key: "language");
+    if(result != null) {
+      _language = _stringToLanguage(result);
+    }
+    return _language;
   }
-  // Getter
+
+  // setter
+  static set language(Language language) {
+    _language = language;
+    _dataService.storeData(key: "language", value: _language.name);
+  }
+
+  // getter
   static Language get language => _language;
 
-  String tr(String key){
-    switch(language){
-      case Language.en: return enUS[key] ?? key;
-      case Language.ru: return ruRU[key] ?? key;
-      case Language.uz: return uzUZ[key] ?? key;
+
+  static Language _stringToLanguage(String lang) {
+    switch(lang) {
+      case "en" : return Language.en;
+      case "uz" : return Language.uz;
+      case "ru" : return Language.ru;
+      default: return Language.uz;
     }
   }
-
 }
