@@ -17,6 +17,5 @@ void main() async {
     },
   );
 }
-
 /// My note app created by Abdulaziz
 
