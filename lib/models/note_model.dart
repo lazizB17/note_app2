@@ -1,5 +1,4 @@
 
-
 class Note {
   late String title;
   late String content;
@@ -26,18 +25,6 @@ class Note {
     return "Title: $title\nContent: $content";
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -78,21 +78,7 @@ class FileService {
     }
     return 'Deleted';
   }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

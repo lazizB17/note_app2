@@ -14,4 +14,7 @@ const enUS = {
   'number_note': "Enter the Note number",
   'delete_all': "Delete all notes",
   'delete_selected': "Selective deletion",
+  'change_pas': "Change the program password",
+  'change_lang': "Change the language ",
+  'choose_lang': "Change the language ",
 };

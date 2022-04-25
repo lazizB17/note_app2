@@ -14,6 +14,9 @@ const uzUZ = {
   'number_note': "Note raqamini kiriting",
   'delete_all': "Barcha notelarni o'chirish",
   'delete_selected': "Tanlab o'chirish",
+  'change_pas': "Dastur parolini o'zgartirish",
+  'change_lang': "Tilni o'zgartirish",
+  'choose_lang': "Tilni o'zgartirish",
 };
 
 

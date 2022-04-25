@@ -2,6 +2,7 @@ import '../models/menu_model.dart';
 import 'lang_services.dart';
 import 'navigation_service.dart';
 
+
 class MyApp {
   static Map<String, Menu> routeMenu = {};
 

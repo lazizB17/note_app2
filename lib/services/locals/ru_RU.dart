@@ -14,4 +14,7 @@ const ruRU = {
   'number_note': "Введите номер заметки",
   'delete_all': "Удалить все заметки",
   'delete_selected': "Выборочное удаление",
+  'change_pas': "Сменить пароль программы",
+  'change_lang': "Изменить язык",
+  'choose_lang': "Изменить язык",
 };
