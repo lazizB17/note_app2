@@ -5,6 +5,8 @@ import 'package:note_app/services/io_service.dart';
 import 'package:note_app/services/lang_services.dart';
 import 'package:note_app/services/navigation_service.dart';
 import '../models/menu_model.dart';
+import 'package:note_app/menu/select_delete_menu.dart';
+import 'package:note_app/menu/view_one_note_menu.dart';
 
 
 class AppSetting extends Menu {
@@ -46,11 +48,11 @@ class AppSetting extends Menu {
       writeln("II. " + "UZ".tr);
       writeln("III. " + "EN".tr);
       String selectedMenu = read();
-      await selectFunctionIf(selectedMenu, files);
+      await selectLang(selectedMenu, files);
     } else {
       writeln("no_note".tr);
-      writeln("I" + "create_note".tr);
-      writeln("II" + "back_to_home".tr);
+      writeln("I. " + "create_note".tr);
+      writeln("II. " + "back_to_home".tr);
       String selectedMenu = read();
       await selectFunctionElse(selectedMenu);
     }
@@ -64,7 +66,7 @@ class AppSetting extends Menu {
       } break;
       case "II": {
         write("\n\n\n\n\n\n");
-        write("choose_lang".tr);
+        writeln("choose_lang".tr);
         await chooseLang();
       } break;
       case "III": {
@@ -122,10 +124,6 @@ class AppSetting extends Menu {
     await viewNoteList();
   }
 }
-
-
-
-
 
 
 

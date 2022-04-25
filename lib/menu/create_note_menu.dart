@@ -50,3 +50,4 @@ class CreateNoteMenu extends Menu {
     await createNote();
   }
 }
+

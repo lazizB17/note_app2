@@ -13,11 +13,6 @@ String read() {
   return result;
 }
 
-String clear() {
-  String cleared = stdin.readLineSync() ?? '';
-  return cleared;
-}
-
 
 
 
